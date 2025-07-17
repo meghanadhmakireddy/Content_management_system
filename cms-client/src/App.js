@@ -4,7 +4,7 @@ import PostList from './components/PostList';
 import Login from './components/Login';
 import Register from './components/Register';
 import CreatePost from './components/CreatePost';
-import Navbar from './components/Navbar'; // ✅ import
+import Navbar from './components/Navbar'; 
 
 function App() {
   const [user, setting] = useState(null);
@@ -34,7 +34,7 @@ function App() {
     <Router>
   <Navbar user={user} onLogout={handleLogout} />
 
-  {/* 🔵 Global bookOgram Badge - always shown */}
+ 
   <div style={{
     backgroundColor: '#FEE3D8', // soft peach
     padding: '10px 20px',
@@ -57,7 +57,6 @@ function App() {
     </div>
   </div>
 
-  {/* Page Routes */}
   <Routes>
     <Route path="/" element={<PostList user={user} />} />
     <Route path="/login" element={<Login setting={setting} />} />
