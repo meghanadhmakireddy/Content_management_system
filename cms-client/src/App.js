@@ -9,14 +9,14 @@ import Navbar from './components/Navbar';
 function App() {
   const [user, setting] = useState(null);
 
-  // 🔁 check session
+
   useEffect(() => {
     fetch('http://localhost:5000/api/auth/me', {
       credentials: 'include'
     })
       .then(res => res.json())
       .then(data => {
-        setting(data.user); // ✅ store session user
+        setting(data.user); // store session user
       });
       
       
@@ -27,7 +27,7 @@ function App() {
       method: 'POST',
       credentials: 'include'
     });
-    setting(null); // ✅ clear user on logout
+    setting(null); // clear user on logout
   };
 
   return (
@@ -36,7 +36,7 @@ function App() {
 
  
   <div style={{
-    backgroundColor: '#FEE3D8', // soft peach
+    backgroundColor: '#FEE3D8',
     padding: '10px 20px',
     position: 'relative'
   }}>
